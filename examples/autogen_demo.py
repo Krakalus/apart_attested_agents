@@ -7,8 +7,11 @@
 from ledger.integration.autogen import LedgerAuditor, utc_now
 from ledger.crypto.keys import AgentKeyPair
 from dataclasses import replace
-from autogen import AssistantAgent, UserProxyAgent
-
+from autogen.agentchat import AssistantAgent, UserProxyAgent
+from dotenv import load_dotenv
+load_dotenv()
+import openai
+import diskcache
 
 if __name__ == "__main__":
     # Setup keypairs and auditor (consumes integration class)
